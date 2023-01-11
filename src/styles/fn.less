@@ -1,0 +1,42 @@
+.clear() {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+.textEllipsis() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.size(@px) {
+  width: @px;
+  height: @px;
+}
+
+.fill() {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alignCenter() {
+  display: flex;
+  align-items: center;
+}
+.flexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+.cursor {
+  cursor: pointer;
+}

@@ -25,7 +25,7 @@ function PickerRootElement({ children }: RootProps) {
   const PickerMainRef = usePickerMainRef();
   return (
     <div
-      className={clsx('custom-emoji-picker', 'epr-main')}
+      className={clsx('custom-emoji-component custom-emoji-picker', 'epr-main')}
       ref={PickerMainRef}
     >
       {children}

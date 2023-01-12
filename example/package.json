@@ -8,13 +8,14 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "lodash-es": "^4.17.21",
     "react-app-polyfill": "^1.0.0"
   },
   "alias": {
     "react": "../node_modules/react",
     "react-dom": "../node_modules/react-dom/profiling",
     "scheduler/tracing": "../node_modules/scheduler/tracing-profiling",
-    "postcss":"../node_modules/postcss"
+    "postcss": "../node_modules/postcss"
   },
   "devDependencies": {
     "@types/react": "^16.9.11",

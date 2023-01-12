@@ -22,3 +22,5 @@ export interface CustomEmoji extends EmojiItem {
   imageUrl: string | React.ReactNode;
   categoryId: string;
 }
+
+export * from './likeRecord';

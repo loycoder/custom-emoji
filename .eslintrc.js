@@ -26,6 +26,8 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-unused-vars': 'warn',
     'no-unused-vars':'off',
+    "jsx-a11y/click-events-have-key-events": 0, 
+    'jsx-a11y/no-static-element-interactions': 0,
     // 'import/extensions': [2, 'never', ],
     'import/first': 2,
     'import/newline-after-import': 1,

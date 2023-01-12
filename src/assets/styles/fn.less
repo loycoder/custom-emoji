@@ -24,10 +24,20 @@
   bottom: 0;
 }
 .center() {
-  display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.flex-center() {
+  display: flex;
+ .center();
+}
+
+.inner-flex-center() {
+  display: inline-flex;
+ .center();
+}
+
 
 .alignCenter() {
   display: flex;
@@ -39,4 +49,8 @@
 }
 .cursor {
   cursor: pointer;
+}
+
+.inline-block {
+  display: inline-block;
 }

@@ -3,7 +3,8 @@ import * as ReactDOM from 'react-dom';
 
 import type1 from './mock/catetory/type1.svg';
 import type2 from './mock/catetory/type2.svg';
-import './index.css';
+import './pc.example.less';
+import RecordDemo from './recordDemo';
 
 import { EmojiPicker } from '..';
 
@@ -40,6 +41,9 @@ export default function App() {
           }
         ]}
       />
+
+      <hr />
+      <RecordDemo />
     </div>
   );
 }

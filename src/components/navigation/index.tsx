@@ -3,7 +3,7 @@ import * as React from 'react';
 // import { useEffect } from 'react';
 
 import { useCategoriesConfig } from '../../config/useConfig';
-import Flex, { FlexDirection } from '../Layout/Flex';
+import Container, { FlexDirection } from '../Layout/Container';
 import Button from '../atoms/Button';
 import { useCategoryNavigationRef } from '../context/ElementRefContext';
 import { useActiveCategoryState } from '../context/PickerContext';
@@ -24,7 +24,7 @@ const CategoryNavigation: React.FunctionComponent<IAppProps> = () => {
   }
 
   return (
-    <Flex
+    <Container
       direction={FlexDirection.ROW}
       ref={CategoryNavigationRef}
       className="category-list-wrap"
@@ -46,7 +46,7 @@ const CategoryNavigation: React.FunctionComponent<IAppProps> = () => {
           </Button>
         );
       })}
-    </Flex>
+    </Container>
   );
 };
 

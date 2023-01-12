@@ -1,0 +1,62 @@
+@import url('../../../assets/styles/var.less');
+@import url('../../../assets/styles/fn.less');
+
+
+.emoji-reaction-record {
+  &-wrap {
+    background: var(--emoji-reaction-record-bgColor);
+    border-radius: var(--emoji-reaction-record-border-radius);
+    padding: var( --emoji-reaction-record-padding);
+    min-width: var(--emoji-reaction-record-container-min-width);
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  &-img {
+    position: relative;
+    width: var(--emoji-reaction-record-img-width);
+    height: var(--emoji-reaction-record-img-height);
+    .inner-flex-center();
+    margin:  var(--emoji-reaction-record-img-margin);
+
+    &::before {
+      position: absolute;
+      right: var(--emoji-reaction-record-line-margin-left);
+      content: ' ';
+      display: block;
+      height: 100%;
+      background: #DBDEE4;
+      width: 1px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  &-label-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    transition: all ease-in 300ms;
+  }
+  &-label {
+    display: inline-block;
+    font-family: 'Microsoft YaHei UI';
+    font-style: normal;
+    font-weight: var(--emoji-reaction-record-font-weight);
+    font-size: var( --emoji-reaction-record-font-size);
+    line-height: var(--emoji-reaction-record-line-height);
+    color: var(--emoji-reaction-record-text-color);
+    margin:var( --emoji-reaction-record-text-margin);
+    max-width: var( --emoji-reaction-record-text-max-width);
+    .textEllipsis();
+    
+    &:first-child {
+      margin-left: 0;
+    }
+   
+    span {
+      margin-right: 5px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { usePickerMainRef } from '../context/ElementRefContext';
 
+import { usePickerMainRef } from '../context/ElementRefContext';
 import { PickerContextProvider } from '../context/PickerContext';
 import './PickerMain.css';
 

@@ -34,13 +34,7 @@ module.exports = {
     'import/no-unresolved': [2],
     'import/no-useless-path-segments': 2,
     'import/order': [
-      'warn',
-      {
-        alphabetize: {
-          order: 'asc'
-        },
-        'newlines-between': 'always'
-      }
+      'off',
     ],
     complexity: [2, { max: 8 }],
     'max-params': [1, { max: 4 }],
@@ -67,7 +61,8 @@ module.exports = {
         natural: true,
         minKeys: 4
       }
-    ]
+    ],
+   
   },
   settings: {
     'import/parsers': {
@@ -75,6 +70,9 @@ module.exports = {
     },
     'import/resolver': {
       typescript: true,
-    }
+    },
+    'jsx-a11y/no-static-element-interactions': [
+      'off',
+    ],
   }
 };

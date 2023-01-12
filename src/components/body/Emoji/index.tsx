@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-import { useEmojiClassName } from '../../../config/useConfig';
+import { useEmojiClassName, useEmojiClick } from '../../../config/useConfig';
 import { EmojiItem } from '../../../types/exposedTypes';
+import Flex from '../../Layout/Flex';
 import AppIcon from '../../atoms/AppIcon';
 
 interface EmojiProps {
@@ -10,7 +11,13 @@ interface EmojiProps {
 
 const Emoji: React.FunctionComponent<EmojiProps> = ({ emoji }) => {
   const emojiClass = useEmojiClassName();
-  return <AppIcon className={emojiClass} icon={`#${emoji.code}`} />;
+  const emojiClick = useEmojiClick();
+
+  return (
+    <Flex onClick={e => emojiClick(e, emoji)}>
+      <AppIcon className={emojiClass} icon={`#${emoji.code}`} />
+    </Flex>
+  );
 };
 
 export default Emoji;

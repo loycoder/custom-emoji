@@ -1,24 +1,25 @@
 import * as React from 'react';
 
-import { useBodyRef } from '../context/ElementRefContext';
 import Flex, { FlexDirection } from '../Layout/Flex';
+import { useBodyRef } from '../context/ElementRefContext';
 
 import './body.less';
 import CategoryNavigation from '../navigation';
 
 import EmojiPicker from './EmojiPicker';
+
 import { ClassNames } from '../../DomUtils/classNames';
-import { useEmojiPickerStyle } from '../../config/useConfig';
+import { useEmojiPickerContainerStyle } from '../../config/useConfig';
 
 interface IAppProps {}
 
 const Body: React.FunctionComponent<IAppProps> = () => {
   const BodyRef = useBodyRef();
-  const style = useEmojiPickerStyle();
+  const containerStyle = useEmojiPickerContainerStyle();
   return (
     <Flex
       className={ClassNames.scrollBody}
-      style={style}
+      style={containerStyle}
       ref={BodyRef}
       direction={FlexDirection.COLUMN}
     >

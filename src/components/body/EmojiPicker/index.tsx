@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 import {
   queryCategoryEmojiList,
@@ -6,12 +7,12 @@ import {
 } from '../../../dataUtils/emojiSelectors';
 import Flex, { FlexDirection } from '../../Layout/Flex';
 import { useActiveCategoryState } from '../../context/PickerContext';
-import { Scrollbars } from 'react-custom-scrollbars-2';
 import Emoji from '../Emoji';
 
 import './index.less';
 import clsx from 'clsx';
-import { usePreLine } from '../../../config/useConfig';
+
+import { usePreLine, useScrollbarArgs } from '../../../config/useConfig';
 
 interface IAppProps {}
 
@@ -20,9 +21,10 @@ const EmojiVariationPicker: React.FunctionComponent<IAppProps> = () => {
   const emojiList = queryCategoryEmojiList(activeCateory?.id);
   const preLine = usePreLine();
   const chunks = splitEmojiToChunks(emojiList, preLine);
+  const scrollbarArgs = useScrollbarArgs();
 
   return (
-    <Scrollbars autoHide style={{ width: '100%', height: 300 }}>
+    <Scrollbars autoHide {...scrollbarArgs}>
       <Flex
         direction={FlexDirection.COLUMN}
         className={clsx('emoji-variation-picker-wrap')}

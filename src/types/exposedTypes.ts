@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-export type EmojiClickData = {
-  unified: string;
-  unifiedWithoutSkinTone: string;
-  emoji: string;
-  names: string[];
-};
+export type EmojiClickData = EmojiItem;
+
+export type EmojiClickProps = (
+  e: React.MouseEvent<HTMLElement, MouseEvent>,
+  emojiData: EmojiClickData
+) => void;
 
 /**
  *  @description 内部emoji

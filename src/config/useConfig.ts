@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { ScrollbarProps } from 'react-custom-scrollbars-2';
 
 import { usePickerConfig } from '../components/context/PickerConfigContext';
+import { EmojiClickProps } from '../types/exposedTypes';
 
 import { CategoriesConfig, CategoryConfig } from './categoryConfig';
 
@@ -40,7 +42,17 @@ export function usePreLine(): number {
   return preLine;
 }
 
-export function useEmojiPickerStyle(): React.CSSProperties {
-  const { emojiPickerStyle } = usePickerConfig();
-  return emojiPickerStyle;
+export function useEmojiPickerContainerStyle(): React.CSSProperties {
+  const { emojiPickerContainerStyle } = usePickerConfig();
+  return emojiPickerContainerStyle;
+}
+
+export function useEmojiClick(): EmojiClickProps {
+  const { onClickEmoji } = usePickerConfig();
+  return onClickEmoji;
+}
+
+export function useScrollbarArgs(): ScrollbarProps {
+  const { scrollbarArgs } = usePickerConfig();
+  return scrollbarArgs;
 }

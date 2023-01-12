@@ -7,26 +7,22 @@ export enum FlexDirection {
   COLUMN = 'flex-column'
 }
 
-type Props = Readonly<{
-  children: React.ReactNode;
-  className?: string;
-  style?: React.CSSProperties;
+interface Props
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   direction?: FlexDirection;
-}>;
+}
 
-const Flex = React.forwardRef<HTMLDivElement, Props>(
-  ({ children, className, style = {}, direction = FlexDirection.ROW }, ref) => {
-    return (
-      <div
-        ref={ref}
-        style={{ ...style }}
-        className={clsx('flex', className, direction)}
-      >
-        {children}
-      </div>
-    );
-  }
-);
+const Flex = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+  const { children, className, direction = FlexDirection.ROW } = props;
+  return (
+    <div ref={ref} {...props} className={clsx('flex', className, direction)}>
+      {children}
+    </div>
+  );
+});
 
 Flex.displayName = 'MediaMember';
 

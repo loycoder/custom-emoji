@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { ScrollbarProps } from 'react-custom-scrollbars-2';
 
-import { CustomEmoji } from '../types/exposedTypes';
+import { CustomEmoji, EmojiClickProps } from '../types/exposedTypes';
+
 import { CategoryConfig } from './categoryConfig';
 
 export function mergeConfig(
@@ -17,7 +19,8 @@ export function basePickerConfig(): PickerConfigInternal {
     customEmojis: [],
     defaultActiveCategoryId: null,
     emojiClassName: '',
-    emojiPickerStyle: {},
+    emojiPickerContainerStyle: {},
+    onClickEmoji: null,
     preLine: 7,
   };
 }
@@ -46,9 +49,19 @@ export type PickerConfigInternal = {
   /**
    * @description 表情包容器样式
    */
-  emojiPickerStyle?: React.CSSProperties;
+  emojiPickerContainerStyle?: React.CSSProperties;
 
   customEmojis?: CustomEmoji[];
+
+  /**
+   * 表情包点击事件
+   */
+  onClickEmoji?: EmojiClickProps;
+
+  /**
+   * 滚动条内部属性
+   */
+  scrollbarArgs?: ScrollbarProps;
 };
 
 type ConfigExternal = PickerConfigInternal;

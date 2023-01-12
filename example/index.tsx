@@ -13,11 +13,20 @@ export default function App() {
       <EmojiPicker
         defaultActiveCategoryId={'seewo-school-pc'}
         emojiClassName="emojiClass"
-        emojiPickerStyle={{
-          width: 300,
-          height: 300
+        emojiPickerContainerStyle={{
+          width: 300
         }}
-        preLine={10}
+        onClickEmoji={(e, data) => {
+          console.log('data: ', data);
+        }}
+        scrollbarArgs={{
+          style: {
+            width: '100%',
+            height: 400,
+            border: '1px solid red'
+          }
+        }}
+        preLine={7}
         categories={[
           {
             id: 'seewo-school-pc',

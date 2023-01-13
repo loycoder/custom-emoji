@@ -1,8 +1,6 @@
-import mock from './mock';
+import emojiData from './seewo-icon-api.json';
 
-export default mock.data.map((vo) => {
-  return {
-    code: vo.iconName,
-    label: vo.iconName,
-  };
-}).reverse();
+/**
+ * PC 和移动端暂时公用一个数据，为后续多分类做扩展
+ */
+export default emojiData;

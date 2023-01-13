@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars-2';
-
 import {
   queryCategoryEmojiList,
   splitEmojiToChunks

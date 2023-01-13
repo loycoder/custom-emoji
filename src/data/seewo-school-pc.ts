@@ -1,8 +1,6 @@
-import mock from './mock';
+import data from './seewo-icon-api.json';
 
-export default mock.data.map((vo) => {
-  return {
-    code: vo.iconName,
-    label: vo.iconName,
-  };
-});
+export default data.map((vo) => ({
+  code: vo.code,
+  label: vo.label,
+}));

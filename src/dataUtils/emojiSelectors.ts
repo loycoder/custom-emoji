@@ -12,6 +12,12 @@ export function queryCategoryEmojiList(categoryId: string): EmojiItem[] {
   return (emojiData as any)[categoryId];
 }
 
+/**
+ * 根据每行表情包拆分
+ * @param emojiList
+ * @param perChunkSize
+ * @returns
+ */
 export function splitEmojiToChunks(
   emojiList: EmojiItem[],
   perChunkSize: number

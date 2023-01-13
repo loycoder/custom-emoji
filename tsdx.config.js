@@ -4,6 +4,8 @@
 const alias = require('@rollup/plugin-alias');
 const images = require('@rollup/plugin-image');
 const postcss = require('rollup-plugin-postcss');
+const peerDepsExternal = require('rollup-plugin-peer-deps-external');
+
 
 
 module.exports = {
@@ -32,7 +34,8 @@ module.exports = {
     config.plugins = [
      ...plugins,
      ...config.plugins,
-    ]
+     peerDepsExternal(),
+    ];
     return config;
   }
 };

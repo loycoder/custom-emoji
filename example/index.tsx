@@ -23,8 +23,7 @@ export default function App() {
         scrollbarArgs={{
           style: {
             width: '100%',
-            height: 100,
-            border: '1px solid red'
+            height: 100
           }
         }}
         preLine={7}
@@ -42,7 +41,6 @@ export default function App() {
         ]}
       />
 
-      <hr />
       <RecordDemo />
     </div>
   );

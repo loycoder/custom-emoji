@@ -11,11 +11,7 @@ export default function AppIcon(props: AppIconProps) {
   const { icon, className, onClick } = props;
 
   return (
-    <svg
-      className={`app-icon ${className || ''}`}
-      onClick={onClick}
-      aria-hidden="true"
-    >
+    <svg className={`${className || ''}`} onClick={onClick} aria-hidden="true">
       <use xlinkHref={icon} />
     </svg>
   );

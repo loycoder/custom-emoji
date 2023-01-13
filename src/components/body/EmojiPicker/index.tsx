@@ -26,7 +26,7 @@ const EmojiVariationPicker: React.FunctionComponent<IAppProps> = () => {
   const chunks = splitEmojiToChunks(emojiList, preLine);
   const scrollbarArgs = useScrollbarArgs();
   const categories = useCategoriesConfig();
-  const scrollbarStyle = scrollbarArgs.style || {};
+  const scrollbarStyle = scrollbarArgs?.style || {};
 
   return (
     <>

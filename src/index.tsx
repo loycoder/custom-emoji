@@ -9,9 +9,9 @@ import ReactionRecord from './components/Reaction/ReactionRecord';
 import './assets/icon-font/seewo-icon.js';
 import ReactionPlan from './components/Reaction/ReactionPlan';
 
-export interface Props extends PickerConfig {}
+export interface EmojiPickerProps extends PickerConfig {}
 
-const EmojiPicker: React.FC<Props> = props => {
+const EmojiPicker: React.FC<EmojiPickerProps> = props => {
   return (
     <ErrorBoundary>
       <EmojiPickerReact {...props} />

@@ -86,7 +86,7 @@ const recordDemo: React.FunctionComponent<IAppProps> = props => {
       <div
         style={{
           maxWidth: 400,
-          border: '1px solid'
+          margin: '20px 0'
         }}
       >
         {recordList.map((vo, index) => {
@@ -102,7 +102,6 @@ const recordDemo: React.FunctionComponent<IAppProps> = props => {
           );
         })}
       </div>
-      <hr />
 
       <div
         style={{

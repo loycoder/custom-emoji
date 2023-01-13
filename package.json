@@ -46,7 +46,7 @@
     "semi": true,
     "singleQuote": true
   },
-  "name": "custom-emoji",
+  "name": "@seewo-school/custom-emoji",
   "author": "ealush",
   "module": "dist/custom-emoji.esm.js",
   "size-limit": [

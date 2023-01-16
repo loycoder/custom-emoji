@@ -12,7 +12,7 @@ export type EmojiClickProps = (
  */
 export interface EmojiItem {
   code: string;
-  name: string;
+  label: string;
 }
 
 /**

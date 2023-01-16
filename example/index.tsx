@@ -6,7 +6,9 @@ import type2 from './mock/catetory/type2.svg';
 import './pc.example.less';
 import RecordDemo from './recordDemo';
 
-import { EmojiPicker } from '..';
+import { EmojiPicker, RenderEmoji } from '..';
+
+const content = '[]][破涕为笑][举手-红][一百分][ok][666]';
 
 export default function App() {
   return (
@@ -42,6 +44,9 @@ export default function App() {
       />
 
       <RecordDemo />
+
+      <RenderEmoji content={content} />
+      {/* <div dangerouslySetInnerHTML={{ __html: abc }} /> */}
     </div>
   );
 }

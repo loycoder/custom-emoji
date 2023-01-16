@@ -1,0 +1,35 @@
+
+.custom-emoji-parse {
+  &-wrap {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+  
+    img {
+      display: inline-block;
+      user-select: none;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &-copy-text {
+    position: absolute;
+    color: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+    outline: none;
+    border: none;
+    cursor: text;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+}

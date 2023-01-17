@@ -11,21 +11,30 @@ export function convertJSon() {
   return obj;
 }
 
-export interface DeserializersEmojiprops {
+export type RenderEmojiComponentParams = {
   html: string;
   svg64: string;
   key: string;
-}
+};
+
+export type DeserializersEmoji = (
+  content: string,
+  renderComponent?: (paramas: RenderEmojiComponentParams) => ReactElement,
+  emojiWidth?: number,
+  emojiHeight?: number
+) => string;
 
 /**
  * 将文本中的 emoji字符串 转为图片表情包
  * @param content
  * @returns
  */
-export function deserializersEmoji(
-  content: string,
-  renderComponent?: (res: DeserializersEmojiprops) => ReactElement
-): string {
+export const deserializersEmoji: DeserializersEmoji = (
+  content,
+  renderComponent = null,
+  emojiWidth = 24,
+  emojiHeight = 24
+) => {
   if (!content.trim().length) {
     return content;
   }
@@ -40,10 +49,11 @@ export function deserializersEmoji(
       if (emojiKeyMap[key]) {
         const svgElement = document.getElementById(emojiKeyMap[key]);
         if (!svgElement) {
+          // eslint-disable-next-line no-console
           console.error(`svg 元素:${emojiKeyMap[key]}找不到`);
           return key;
         }
-        const html = `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">${svgElement?.innerHTML}</svg>`;
+        const html = `<svg width="${emojiWidth}" height="${emojiHeight}" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">${svgElement?.innerHTML}</svg>`;
         const base64fromSVG = svg64(html);
 
         const component = !renderComponent ? (
@@ -58,4 +68,4 @@ export function deserializersEmoji(
       return key;
     }
   );
-}
+};

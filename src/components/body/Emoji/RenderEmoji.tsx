@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {
-  deserializersEmoji,
-  DeserializersEmojiprops
-} from '../../../dataUtils/emojiConvert';
+import { deserializersEmoji } from '../../..';
+import { RenderEmojiComponentParams } from '../../../dataUtils/emojiConvert';
 import Container from '../../Layout/Container';
 import './RenderEmoji.less';
 
@@ -20,11 +18,11 @@ const RenderEmoji: React.FunctionComponent<EmojiProps> = ({
   }
   const htmlStr = deserializersEmoji(
     content,
-    ({ svg64, key }: DeserializersEmojiprops) => {
+    ({ svg64, key }: RenderEmojiComponentParams) => {
       return (
         <Container inlineFix className="custom-emoji-parse-wrap">
           <img src={svg64} alt="" />
-          <span className="custom-emoji-parse-copy-text">{key}</span>
+          <span className="custom-emoji-parse-copy-text">[{key}]</span>
         </Container>
       );
     }

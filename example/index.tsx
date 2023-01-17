@@ -8,7 +8,7 @@ import RecordDemo from './recordDemo';
 
 import { EmojiPicker, RenderEmoji } from '..';
 
-const content = '[]][破涕为笑][举手-红][一百分][ok][666]';
+const content = `[匹配不到的表情包][]<br />[[破涕为笑]哈哈哈哈哈[举手-红][一百分][ok][666]`;
 
 export default function App() {
   return (

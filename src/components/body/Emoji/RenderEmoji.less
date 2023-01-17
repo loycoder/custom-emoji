@@ -9,27 +9,23 @@
   
     img {
       display: inline-block;
-      user-select: none;
       width: 24px;
       height: 24px;
     }
   }
 
   &-copy-text {
-    position: absolute;
-    color: transparent;
-    display: flex;
-    flex-wrap: nowrap;
-    outline: none;
-    border: none;
     cursor: text;
-    background: transparent;
-    width: 100%;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    font-size: 1px;
     height: 100%;
-    top: 0;
     left: 0;
-    overflow: hidden;
+    outline: none;
+    position: absolute;
+    width: 100%;
     z-index: 2;
+    bottom: -40px;
   }
 
 }

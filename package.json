@@ -100,7 +100,6 @@
     "@rollup/plugin-alias": "^4.0.2",
     "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-url": "^8.0.1",
-    "@seewo-school/custom-emoji": "file:.yalc/@seewo-school/custom-emoji",
     "clsx": "^1.2.1",
     "eslint-import-resolver-alias": "^1.1.2",
     "react-custom-scrollbars-2": "^4.5.0"

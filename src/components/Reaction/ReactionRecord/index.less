@@ -40,23 +40,30 @@
     transition: all ease-in 300ms;
   }
   &-label {
-    display: inline-block;
-    font-family: 'Microsoft YaHei UI';
-    font-style: normal;
     font-weight: var(--emoji-reaction-record-font-weight);
     font-size: var( --emoji-reaction-record-font-size);
     line-height: var(--emoji-reaction-record-line-height);
     color: var(--emoji-reaction-record-text-color);
     margin:var( --emoji-reaction-record-text-margin);
-    max-width: var( --emoji-reaction-record-text-max-width);
-    .textEllipsis();
-    
-    &:first-child {
-      margin-left: 0;
+    position: relative;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+
+    span {
+      margin-right: 3px;
     }
    
-    span {
-      margin-right: 5px;
+    &-ellipsis {
+      display: inline-block;
+      max-width: var( --emoji-reaction-record-text-max-width);
+      .textEllipsis();
     }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+   
+   
   }
 }

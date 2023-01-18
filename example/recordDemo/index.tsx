@@ -22,7 +22,7 @@ const createRecord = (): RootObject[] => {
   return Array.from({ length: 3 }).map((_item, key) => {
     const map = Object.values(ReactionCodeEnum);
 
-    const name = Array.from({ length: random(2, 10) })
+    const name = Array.from({ length: 10 })
       .map(() => getRandomChineseWord())
       .join('');
 
@@ -30,7 +30,7 @@ const createRecord = (): RootObject[] => {
       id: uniqueId(),
       label: 'nick_' + random(100000, 90000),
       type: map[key] || map[0],
-      recordList: Array.from({ length: random(3, 10) }).map(() => ({
+      recordList: Array.from({ length: random(2, 630) }).map(() => ({
         id: uniqueId(),
         label: name
       }))

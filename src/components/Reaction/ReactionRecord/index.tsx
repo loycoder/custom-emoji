@@ -20,7 +20,8 @@ export type onRecordClick = (
 ) => void;
 
 type Record = {
-  id: string;
+  userId: string;
+  likeUid?: string;
   label: string;
 };
 
@@ -58,10 +59,17 @@ const ReactionRecord: React.FunctionComponent<IAppProps> = ({
 
       <div className="emoji-reaction-record-label-container">
         {recordList.map((item, index) => {
+          const length = recordList.length;
           return (
-            <div key={index} className="emoji-reaction-record-label">
-              {item.label}
-              {index !== recordList.length - 1 && <span>,</span>}
+            <div key={index} className={clsx('emoji-reaction-record-label')}>
+              <span
+                className={clsx({
+                  'emoji-reaction-record-label-ellipsis': length > 4
+                })}
+              >
+                {item.label}
+              </span>
+              {index !== length - 1 && ','}
             </div>
           );
         })}

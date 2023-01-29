@@ -24,6 +24,7 @@ export type DeserializersEmoji = (
   emojiHeight?: number
 ) => string;
 
+export const EMOJI_REG = /\[(([a-z]|[A-Z]|[0-9]|-|[\u4e00-\u9fa5])+)\]/g;
 /**
  * 将文本中的 emoji字符串 转为图片表情包
  * @param content
@@ -43,29 +44,26 @@ export const deserializersEmoji: DeserializersEmoji = (
   }
   const emojiKeyMap = convertJSon();
 
-  return content.replace(
-    /\[(([a-z]|[A-Z]|[0-9]|-|[\u4e00-\u9fa5])+)\]/g,
-    (_match, key) => {
-      if (emojiKeyMap[key]) {
-        const svgElement = document.getElementById(emojiKeyMap[key]);
-        if (!svgElement) {
-          // eslint-disable-next-line no-console
-          console.error(`svg 元素:${emojiKeyMap[key]}找不到`);
-          return key;
-        }
-        const html = `<svg width="${emojiWidth}" height="${emojiHeight}" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">${svgElement?.innerHTML}</svg>`;
-        const base64fromSVG = svg64(html);
-
-        const component = !renderComponent ? (
-          <img src={base64fromSVG} alt="" />
-        ) : (
-          renderComponent({ svg64: base64fromSVG, key, html })
-        );
-
-        // 服务端渲染将组件转为字符串
-        return renderToStaticMarkup(component);
+  return content.replace(EMOJI_REG, (_match, key) => {
+    if (emojiKeyMap[key]) {
+      const svgElement = document.getElementById(emojiKeyMap[key]);
+      if (!svgElement) {
+        // eslint-disable-next-line no-console
+        console.error(`svg 元素:${emojiKeyMap[key]}找不到`);
+        return key;
       }
-      return key;
+      const html = `<svg width="${emojiWidth}" height="${emojiHeight}" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">${svgElement?.innerHTML}</svg>`;
+      const base64fromSVG = svg64(html);
+
+      const component = !renderComponent ? (
+        <img src={base64fromSVG} alt="" />
+      ) : (
+        renderComponent({ svg64: base64fromSVG, key, html })
+      );
+
+      // 服务端渲染将组件转为字符串
+      return renderToStaticMarkup(component);
     }
-  );
+    return key;
+  });
 };

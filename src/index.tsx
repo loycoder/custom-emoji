@@ -9,7 +9,7 @@ import ReactionRecord from './components/Reaction/ReactionRecord';
 import './assets/icon-font/seewo-icon.js';
 import ReactionPlan from './components/Reaction/ReactionPlan';
 import RenderEmoji from './components/body/Emoji/RenderEmoji';
-import { deserializersEmoji } from './dataUtils/emojiConvert';
+import { deserializersEmoji, EMOJI_REG } from './dataUtils/emojiConvert';
 
 export interface EmojiPickerProps extends PickerConfig {}
 
@@ -26,7 +26,8 @@ export {
   ReactionPlan,
   EmojiPicker,
   deserializersEmoji,
-  RenderEmoji
+  RenderEmoji,
+  EMOJI_REG
 };
 
 export * from './types/exposedTypes';

@@ -28,7 +28,7 @@ module.exports = {
           require('cssnano')
         ],
         inject: true,
-        extract: !!options.writeMeta
+        extract:  true//!!options.writeMeta
       }),
     ]
     config.plugins = [

@@ -14,8 +14,8 @@ const Emoji: React.FunctionComponent<EmojiProps> = ({ emoji }) => {
   const emojiClick = useEmojiClick();
 
   return (
-    <Container onClick={e => emojiClick(e, emoji)}>
-      <AppIcon className={emojiClass} icon={`#${emoji.code}`} />
+    <Container className={emojiClass} onClick={e => emojiClick(e, emoji)}>
+      <AppIcon icon={`#${emoji.code}`} />
     </Container>
   );
 };

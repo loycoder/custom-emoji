@@ -7,6 +7,7 @@ import './pc.example.less';
 import RecordDemo from './recordDemo';
 
 import { EmojiPicker, RenderEmoji } from '..';
+import '../dist/custom-emoji.cjs.production.min.css';
 
 const content = `[匹配不到的表情包][]<br />[[破涕为笑]哈哈哈哈哈[举手-红][一百分][ok][666]`;
 

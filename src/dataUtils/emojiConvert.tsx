@@ -1,15 +1,8 @@
 import React, { ReactElement } from 'react';
-import json from '../data/seewo-icon-api.json';
+import emojiList from '../data/seewo-icon-api.json';
 import { renderToStaticMarkup } from 'react-dom/server';
-import svg64 from '../DomUtils/svgTo64';
-
-export function convertJSon() {
-  const obj: { [key: string]: string } = {};
-  json.forEach(item => {
-    obj[item.label.replace(/^ic_/, '')] = item.code;
-  });
-  return obj;
-}
+import AppIcon from '../components/atoms/AppIcon';
+import './emojiConvert.less';
 
 export type RenderEmojiComponentParams = {
   html: string;
@@ -19,12 +12,10 @@ export type RenderEmojiComponentParams = {
 
 export type DeserializersEmoji = (
   content: string,
-  renderComponent?: (paramas: RenderEmojiComponentParams) => ReactElement,
-  emojiWidth?: number,
-  emojiHeight?: number
+  renderComponent?: (emoji: { code: string; label: string }) => ReactElement
 ) => string;
 
-export const EMOJI_REG = /\[(([a-z]|[A-Z]|[0-9]|-|[\u4e00-\u9fa5])+)\]/g;
+export const EMOJI_REG = /\[([a-z]|[A-Z]|[0-9]|-|[\u4e00-\u9fa5])+\]/g;
 /**
  * 将文本中的 emoji字符串 转为图片表情包
  * @param content
@@ -32,9 +23,7 @@ export const EMOJI_REG = /\[(([a-z]|[A-Z]|[0-9]|-|[\u4e00-\u9fa5])+)\]/g;
  */
 export const deserializersEmoji: DeserializersEmoji = (
   content,
-  renderComponent = null,
-  emojiWidth = 24,
-  emojiHeight = 24
+  renderComponent = null
 ) => {
   if (!content.trim().length) {
     return content;
@@ -42,28 +31,22 @@ export const deserializersEmoji: DeserializersEmoji = (
   if (!(content.includes('[') && content.includes(']'))) {
     return content;
   }
-  const emojiKeyMap = convertJSon();
 
-  return content.replace(EMOJI_REG, (_match, key) => {
-    if (emojiKeyMap[key]) {
-      const svgElement = document.getElementById(emojiKeyMap[key]);
-      if (!svgElement) {
-        // eslint-disable-next-line no-console
-        console.error(`svg 元素:${emojiKeyMap[key]}找不到`);
-        return key;
-      }
-      const html = `<svg width="${emojiWidth}" height="${emojiHeight}" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">${svgElement?.innerHTML}</svg>`;
-      const base64fromSVG = svg64(html);
+  return content.replace(EMOJI_REG, label => {
+    const emoji = emojiList.find(v => v.label === label);
+    if (!emoji) return label;
+    const component = renderComponent ? (
+      renderComponent(emoji)
+    ) : (
+      <div className="custom-emoji-parse-wrap">
+        <AppIcon icon={`#${emoji.code}`} />
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAACdJREFUSA3t0DEBAAAAwqD1T+1vBohAYcCAAQMGDBgwYMCAAQMGfmAOLgABrSzR1AAAAABJRU5ErkJggg=="
+          alt={emoji.label}
+        />
+      </div>
+    );
 
-      const component = !renderComponent ? (
-        <img src={base64fromSVG} alt="" />
-      ) : (
-        renderComponent({ svg64: base64fromSVG, key, html })
-      );
-
-      // 服务端渲染将组件转为字符串
-      return renderToStaticMarkup(component);
-    }
-    return key;
+    return renderToStaticMarkup(component);
   });
 };

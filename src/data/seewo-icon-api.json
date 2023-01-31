@@ -1,114 +1,114 @@
 [
-  {
-      "code": "ic_666",
-      "label": "ic_666"
-  },
-  {
-      "code": "ic_cuowu",
-      "label": "ic_错误"
-  },
-  {
-      "code": "ic_guzhang",
-      "label": "ic_鼓掌"
-  },
-  {
-      "code": "ic_huo",
-      "label": "ic_火"
-  },
-  {
-      "code": "ic_jiayi",
-      "label": "ic_加一"
-  },
-  {
-      "code": "ic_jiangbei",
-      "label": "ic_奖杯"
-  },
-  {
-      "code": "ic_jianxiao",
-      "label": "ic_奸笑"
-  },
-  {
-      "code": "ic_jinpai",
-      "label": "ic_金牌"
-  },
-  {
-      "code": "ic_jingya",
-      "label": "ic_惊讶"
-  },
-  {
-      "code": "ic_jushou-hong",
-      "label": "ic_举手-红"
-  },
-  {
-      "code": "ic_jushou-lü",
-      "label": "ic_举手-绿"
-  },
-  {
-      "code": "ic_jushou-lan",
-      "label": "ic_举手-蓝"
-  },
-  {
-      "code": "ic_liulei",
-      "label": "ic_流泪"
-  },
-  {
-      "code": "ic_meigui",
-      "label": "ic_玫瑰"
-  },
-  {
-      "code": "ic_songaixin",
-      "label": "ic_送爱心"
-  },
-  {
-      "code": "ic_wa",
-      "label": "ic_哇"
-  },
-  {
-      "code": "ic_songhua",
-      "label": "ic_送花"
-  },
-  {
-      "code": "ic_woshou",
-      "label": "ic_握手"
-  },
-  {
-      "code": "ic_xiaolian",
-      "label": "ic_笑脸"
-  },
-  {
-      "code": "ic_potiweixiao",
-      "label": "ic_破涕为笑"
-  },
-  {
-      "code": "ic_qingzhu",
-      "label": "ic_庆祝"
-  },
-  {
-      "code": "ic_shengli",
-      "label": "ic_胜利"
-  },
-  {
-      "code": "ic_qiang",
-      "label": "ic_强"
-  },
-  {
-      "code": "ic_weixiao",
-      "label": "ic_微笑"
-  },
-  {
-      "code": "ic_yibaifen",
-      "label": "ic_一百分"
-  },
-  {
-      "code": "ic_zhengque",
-      "label": "ic_正确"
-  },
-  {
-      "code": "ic_zhoumei",
-      "label": "ic_皱眉"
-  },
-  {
-      "code": "ic_ok",
-      "label": "ic_ok"
-  }
+    {
+        "code": "ic_666",
+        "label": "[666]"
+    },
+    {
+        "code": "ic_cuowu",
+        "label": "[错误]"
+    },
+    {
+        "code": "ic_guzhang",
+        "label": "[鼓掌]"
+    },
+    {
+        "code": "ic_huo",
+        "label": "[火]"
+    },
+    {
+        "code": "ic_jiayi",
+        "label": "[加一]"
+    },
+    {
+        "code": "ic_jiangbei",
+        "label": "[奖杯]"
+    },
+    {
+        "code": "ic_jianxiao",
+        "label": "[奸笑]"
+    },
+    {
+        "code": "ic_jinpai",
+        "label": "[金牌]"
+    },
+    {
+        "code": "ic_jingya",
+        "label": "[惊讶]"
+    },
+    {
+        "code": "ic_jushou-hong",
+        "label": "[举手-红]"
+    },
+    {
+        "code": "ic_jushou-lü",
+        "label": "[举手-绿]"
+    },
+    {
+        "code": "ic_jushou-lan",
+        "label": "[举手-蓝]"
+    },
+    {
+        "code": "ic_liulei",
+        "label": "[流泪]"
+    },
+    {
+        "code": "ic_meigui",
+        "label": "[玫瑰]"
+    },
+    {
+        "code": "ic_songaixin",
+        "label": "[送爱心]"
+    },
+    {
+        "code": "ic_wa",
+        "label": "[哇]"
+    },
+    {
+        "code": "ic_songhua",
+        "label": "[送花]"
+    },
+    {
+        "code": "ic_woshou",
+        "label": "[握手]"
+    },
+    {
+        "code": "ic_xiaolian",
+        "label": "[笑脸]"
+    },
+    {
+        "code": "ic_potiweixiao",
+        "label": "[破涕为笑]"
+    },
+    {
+        "code": "ic_qingzhu",
+        "label": "[庆祝]"
+    },
+    {
+        "code": "ic_shengli",
+        "label": "[胜利]"
+    },
+    {
+        "code": "ic_qiang",
+        "label": "[强]"
+    },
+    {
+        "code": "ic_weixiao",
+        "label": "[微笑]"
+    },
+    {
+        "code": "ic_yibaifen",
+        "label": "[一百分]"
+    },
+    {
+        "code": "ic_zhengque",
+        "label": "[正确]"
+    },
+    {
+        "code": "ic_zhoumei",
+        "label": "[皱眉]"
+    },
+    {
+        "code": "ic_ok",
+        "label": "[ok]"
+    }
 ]

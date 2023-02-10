@@ -54,7 +54,13 @@ const EmojiVariationPicker: React.FunctionComponent<IAppProps> = () => {
                     key={chunkIndex}
                   >
                     {chunk.map((emoji, index) => {
-                      return <Emoji key={index} emoji={emoji} />;
+                      return (
+                        <Emoji
+                          className="emoji-variation-picker-item"
+                          key={index}
+                          emoji={emoji}
+                        />
+                      );
                     })}
                   </Container>
                 );

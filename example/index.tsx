@@ -24,7 +24,7 @@ export default function App() {
   return (
     <div className="App">
       <EmojiPicker
-        // defaultActiveCategoryId={'seewo-school-pc'}
+        defaultActiveCategoryId={'seewo-school-pc'}
         emojiClassName="emojiClass"
         emojiPickerContainerStyle={{
           width: 300

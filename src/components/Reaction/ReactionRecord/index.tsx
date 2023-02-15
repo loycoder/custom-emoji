@@ -47,7 +47,6 @@ const ReactionRecord: React.FunctionComponent<IAppProps> = ({
 
   return (
     <Container
-      data-id={recordId}
       onClick={e => onRecordClick?.(e, recordId, recordList)}
       inlineFix
       ref={ref}

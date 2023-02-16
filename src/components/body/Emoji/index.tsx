@@ -3,7 +3,6 @@ import * as React from 'react';
 import { useEmojiClassName, useEmojiClick } from '../../../config/useConfig';
 import { EmojiItem } from '../../../types/exposedTypes';
 import Container from '../../Layout/Container';
-import AppIcon from '../../atoms/AppIcon';
 import clsx from 'clsx';
 
 interface EmojiProps {
@@ -23,7 +22,16 @@ const Emoji: React.FunctionComponent<EmojiProps> = ({
       className={clsx(emojiClass, className)}
       onClick={e => emojiClick(e, emoji)}
     >
-      <AppIcon icon={`#${emoji.code}`} />
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 256 256"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <use xlinkHref={`#${emoji.code}`} />
+      </svg>
     </Container>
   );
 };

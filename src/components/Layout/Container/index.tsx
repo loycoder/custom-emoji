@@ -45,6 +45,6 @@ const Container = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   );
 });
 
-Container.displayName = 'Container';
+Container.displayName = 'MediaMember';
 
 export default Container;

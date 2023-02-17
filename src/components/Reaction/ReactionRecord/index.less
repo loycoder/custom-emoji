@@ -1,11 +1,12 @@
 @import url('../../../assets/styles/var.less');
 @import url('../../../assets/styles/fn.less');
 
+
 .emoji-reaction-record {
   &-wrap {
     background: var(--emoji-reaction-record-bgColor);
     border-radius: var(--emoji-reaction-record-border-radius);
-    padding: var(--emoji-reaction-record-padding);
+    padding: var( --emoji-reaction-record-padding);
     min-width: var(--emoji-reaction-record-container-min-width);
     align-items: center;
     cursor: pointer;
@@ -16,7 +17,7 @@
     width: var(--emoji-reaction-record-img-width);
     height: var(--emoji-reaction-record-img-height);
     .inner-flex-center();
-    margin: var(--emoji-reaction-record-img-margin);
+    margin:  var(--emoji-reaction-record-img-margin);
 
     &::before {
       position: absolute;
@@ -24,7 +25,7 @@
       content: ' ';
       display: block;
       height: 100%;
-      background: #dbdee4;
+      background: #DBDEE4;
       width: 1px;
     }
     img {
@@ -40,10 +41,10 @@
   }
   &-label {
     font-weight: var(--emoji-reaction-record-font-weight);
-    font-size: var(--emoji-reaction-record-font-size);
+    font-size: var( --emoji-reaction-record-font-size);
     line-height: var(--emoji-reaction-record-line-height);
     color: var(--emoji-reaction-record-text-color);
-    margin: var(--emoji-reaction-record-text-margin);
+    margin:var( --emoji-reaction-record-text-margin);
     position: relative;
     vertical-align: middle;
     display: inline-flex;
@@ -52,15 +53,17 @@
     span {
       margin-right: 3px;
     }
-
+   
     &-ellipsis {
       display: inline-block;
-      max-width: var(--emoji-reaction-record-text-max-width);
+      max-width: var( --emoji-reaction-record-text-max-width);
       .textEllipsis();
     }
-
+    
     &:last-child {
       margin-right: 0;
     }
+   
+   
   }
 }
